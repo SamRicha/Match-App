@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2212B45A207D0E7100ABE286 /* dingcorrect.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2212B456207D0E6F00ABE286 /* dingcorrect.wav */; };
+		2212B45B207D0E7100ABE286 /* cardflip.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2212B457207D0E7000ABE286 /* cardflip.wav */; };
+		2212B45C207D0E7100ABE286 /* dingwrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2212B458207D0E7000ABE286 /* dingwrong.wav */; };
+		2212B45D207D0E7100ABE286 /* shuffle.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2212B459207D0E7100ABE286 /* shuffle.wav */; };
+		2212B460207D0EA300ABE286 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2212B45F207D0EA300ABE286 /* AVFoundation.framework */; };
+		2212B462207D0EE800ABE286 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2212B461207D0EE800ABE286 /* SoundManager.swift */; };
 		22682CEE20701B480008AECB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22682CED20701B480008AECB /* AppDelegate.swift */; };
 		22682CF020701B480008AECB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22682CEF20701B480008AECB /* ViewController.swift */; };
 		22682CF320701B480008AECB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22682CF120701B480008AECB /* Main.storyboard */; };
@@ -18,6 +24,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2212B456207D0E6F00ABE286 /* dingcorrect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dingcorrect.wav; sourceTree = "<group>"; };
+		2212B457207D0E7000ABE286 /* cardflip.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cardflip.wav; sourceTree = "<group>"; };
+		2212B458207D0E7000ABE286 /* dingwrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = dingwrong.wav; sourceTree = "<group>"; };
+		2212B459207D0E7100ABE286 /* shuffle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shuffle.wav; sourceTree = "<group>"; };
+		2212B45F207D0EA300ABE286 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		2212B461207D0EE800ABE286 /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		22682CEA20701B480008AECB /* Match App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Match App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22682CED20701B480008AECB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22682CEF20701B480008AECB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,17 +47,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2212B460207D0EA300ABE286 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2212B455207D0DC200ABE286 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				2212B457207D0E7000ABE286 /* cardflip.wav */,
+				2212B456207D0E6F00ABE286 /* dingcorrect.wav */,
+				2212B458207D0E7000ABE286 /* dingwrong.wav */,
+				2212B459207D0E7100ABE286 /* shuffle.wav */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		2212B45E207D0EA200ABE286 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2212B45F207D0EA300ABE286 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		22682CE120701B480008AECB = {
 			isa = PBXGroup;
 			children = (
 				22682CEC20701B480008AECB /* Match App */,
 				22682CEB20701B480008AECB /* Products */,
+				2212B45E207D0EA200ABE286 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +93,7 @@
 		22682CEC20701B480008AECB /* Match App */ = {
 			isa = PBXGroup;
 			children = (
+				2212B455207D0DC200ABE286 /* Sounds */,
 				22682CED20701B480008AECB /* AppDelegate.swift */,
 				22682CEF20701B480008AECB /* ViewController.swift */,
 				22682CFF2071BD490008AECB /* CardModel.swift */,
@@ -69,6 +103,7 @@
 				22682CF420701B480008AECB /* Assets.xcassets */,
 				22682CF620701B480008AECB /* LaunchScreen.storyboard */,
 				22682CF920701B480008AECB /* Info.plist */,
+				2212B461207D0EE800ABE286 /* SoundManager.swift */,
 			);
 			path = "Match App";
 			sourceTree = "<group>";
@@ -134,7 +169,11 @@
 			files = (
 				22682CF820701B480008AECB /* LaunchScreen.storyboard in Resources */,
 				22682CF520701B480008AECB /* Assets.xcassets in Resources */,
+				2212B45C207D0E7100ABE286 /* dingwrong.wav in Resources */,
+				2212B45D207D0E7100ABE286 /* shuffle.wav in Resources */,
 				22682CF320701B480008AECB /* Main.storyboard in Resources */,
+				2212B45A207D0E7100ABE286 /* dingcorrect.wav in Resources */,
+				2212B45B207D0E7100ABE286 /* cardflip.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +189,7 @@
 				22682D002071BD490008AECB /* CardModel.swift in Sources */,
 				22682D042071D29C0008AECB /* CardCollectionViewCell.swift in Sources */,
 				22682D022071BE530008AECB /* Card.swift in Sources */,
+				2212B462207D0EE800ABE286 /* SoundManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

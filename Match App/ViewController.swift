@@ -21,7 +21,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     var firstFlippedCardIndex:IndexPath?
     
     var timer:Timer?
-    var milliseconds:Float = 10 * 1000 // 10 seconds
+    var milliseconds:Float = 30 * 1000 // 30 seconds
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +36,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         // create timer
         timer = Timer.scheduledTimer(timeInterval: 0.001, target: self, selector: #selector(timerElapsed), userInfo: nil, repeats: true)
         RunLoop.main.add(timer!, forMode: .commonModes)
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        SoundManager.playSound(.shuffle)
     }
     
     override func didReceiveMemoryWarning() {
@@ -101,6 +106,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
             // flip the card
             cell.flip()
+            
+            // play the flip sound
+            SoundManager.playSound(.flip)
+            
+            // set the status of the card
             card.isFlipped = true
             
             // determine if it's the first card or second card that's flipped over
@@ -133,6 +143,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
             // it's a match
             
+            // play sound
+            SoundManager.playSound(.match)
+            
             // set the statuses of the cards
             cardOne.isMatched = true
             cardTwo.isMatched = true
@@ -147,6 +160,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
         else {
             // it's not a match
+            
+            // play sound
+            SoundManager.playSound(.nomatch)
             
             // set the status
             cardOne.isFlipped = false
