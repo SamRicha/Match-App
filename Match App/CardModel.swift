@@ -20,7 +20,7 @@ class CardModel {
             
             let randomNumber = arc4random_uniform(13) + 1
             
-            // get a random number
+            // log the number
             print(randomNumber)
             
             // create the first card object

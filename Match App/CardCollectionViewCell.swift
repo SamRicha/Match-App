@@ -21,6 +21,19 @@ class CardCollectionViewCell: UICollectionViewCell {
         // keep track of the card that gets passed in
         self.card = card
         
+        if card.isMatched == true {
+            
+            // if the card has been matched, then the images views invisible
+            backImageView.alpha = 0
+            frontImageView.alpha = 0
+            
+            return
+        } else {
+            // if the card has been matched, then the images views visible
+            backImageView.alpha = 1
+            frontImageView.alpha = 1
+        }
+        
         frontImageView.image = UIImage(named: card.imageName)
         
         // determine if the card is in a flipped up state or flipped down state
